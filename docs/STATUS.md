@@ -10,6 +10,8 @@ Slice 0: project method, documentation system, and architecture baseline.
 - Architecture contract in `docs/ARCHITEKTUR.md`.
 - Decision log in `docs/DECISIONS.md`.
 - Initial simulation rule contract in `docs/SIM_RULES.md`.
+- Consolidated planning brief in `docs/PLANUNGSAUFTRAG.md`.
+- Claude evaluation brief in `docs/EVALUATIONSAUFTRAG_CLAUDE.md`.
 - Status, next steps, and findings docs.
 - README updated to point future work at the docs.
 
@@ -39,5 +41,7 @@ Docs-only validation for this slice:
 - confirm `AGENTS.md` references existing docs
 - confirm docs use the same authority order and terminology
 - confirm README points to the current docs
+- confirm `docs/PLANUNGSAUFTRAG.md` matches current decisions and next steps
+- confirm `docs/EVALUATIONSAUFTRAG_CLAUDE.md` asks for concrete prioritized findings
 
 No Godot headless test exists yet.

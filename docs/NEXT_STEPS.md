@@ -4,6 +4,8 @@
 
 Review the Slice 0 docs and confirm the rule defaults:
 
+- send `docs/EVALUATIONSAUFTRAG_CLAUDE.md` to Claude and process the returned findings through `AGENTS.md` External Evaluation Intake
+- `docs/PLANUNGSAUFTRAG.md` accurately summarizes the concept and slice plan
 - expansion from only the last placed block
 - placement checks 8 neighboring cells
 - block placement only on empty cells
@@ -109,5 +111,5 @@ Non-goals:
 ## Current Commit Suggestion
 
 ```text
-docs(planning): establish poind foundation docs
+docs(planning): add poind planning and evaluation briefs
 ```

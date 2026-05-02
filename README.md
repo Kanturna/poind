@@ -8,6 +8,7 @@ The current direction is colony-level territory expansion on a square grid: colo
 
 - `AGENTS.md` defines the project workflow for future agent work.
 - `docs/ARCHITEKTUR.md` defines layer ownership and simulation authority.
+- `docs/PLANUNGSAUFTRAG.md` summarizes the current concept, scope, and slice plan.
 - `docs/SIM_RULES.md` defines the current territory rules.
 - `docs/DECISIONS.md` records architectural and rule decisions.
 - `docs/STATUS.md` and `docs/NEXT_STEPS.md` track current state and the next slices.
