@@ -6,7 +6,7 @@ Slice 0: project method, documentation system, and architecture baseline.
 
 ## Implemented In This Slice
 
-- Canonical agent rules in `AGENTS.md`.
+- Canonical agent rules in `AGENTS.md`, including review intake, completion reports, and commit handoff format.
 - Architecture contract in `docs/ARCHITEKTUR.md`.
 - Decision log in `docs/DECISIONS.md`.
 - Initial simulation rule contract in `docs/SIM_RULES.md`.

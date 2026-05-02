@@ -114,9 +114,37 @@ A cross-agent review is recommended when the change:
 
 Frame the request as a concrete focus, not just "please review".
 
+Examples:
+
+- `Codex: verify that all territory placement still goes through TerritorySimulationService.place_block().`
+- `GPT: review whether the current slice creates useful validation gates without artificial micro-slicing.`
+- `Claude Code: verify that capture rules do not scan whole territories or overwrite enemy-owned cells.`
+
+## External Evaluation Intake
+
+When the user provides an external analysis, evaluation, review, or cross-agent critique, treat it as structured implementation input, not background context.
+
+This protocol runs alongside Documentation Sync and Completion Protocol. Per-finding evidence belongs in the completion report. Findings that should remain open go into `docs/FINDINGS.md`. Findings that change architecture, public APIs, simulation truth, capture rules, strategy contracts, assets, adapters, or validation strategy also update the relevant docs and tests.
+
+Required process:
+
+- Extract every concrete finding into an internal checklist before editing.
+- Preserve reviewer priority labels such as `P0`, `P1`, and `P2`.
+- For each finding, choose one explicit action: `implement`, `document as open finding`, or `reject with reason`.
+- Do not merge several findings into a vague "addressed review feedback" bucket.
+- P0 items block further implementation until fixed, unless the user explicitly overrides them.
+- P1 items should be fixed before the next slice unless explicitly deferred by the user.
+- P2 items may be documented as future work, but if the user asks to implement all P2 items, implement them or state the exact blocker.
+- If a finding changes architecture, public APIs, simulation truth, capture rules, strategy contracts, assets, adapters, or validation strategy, update the relevant docs and tests.
+- After implementation, report evidence per finding group: changed files, validation run, searches run, and remaining open items.
+
+Guardrail:
+
+- Do not claim an external review was implemented just because the general intent was followed. Each actionable point needs a traceable code, test, documentation, or explicit deferral outcome.
+
 ## Completion Protocol
 
-Every implementation response includes:
+Every implementation completion report includes:
 
 - goal handled
 - changed file groups
@@ -124,6 +152,26 @@ Every implementation response includes:
 - documentation sync result or reason it was not needed
 - known risks or follow-ups
 - review handoff stance from "Review Handoff"
+- commit title suggestion in its own copyable block
+- commit description suggestion in a separate copyable block
+
+Commit title format:
+
+```text
+type(scope): imperative title
+```
+
+Allowed commit types:
+
+```text
+feat, fix, perf, refactor, docs, test, chore
+```
+
+Common scopes:
+
+```text
+core, sim, runtime, rendering, ui, scenes, debug, docs, tests, tools, planning
+```
 
 Do not auto-commit, push, or open PRs unless explicitly requested.
 
